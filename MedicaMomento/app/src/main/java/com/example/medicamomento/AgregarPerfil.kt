@@ -255,7 +255,7 @@ class AgregarPerfil : AppCompatActivity() {
                     true
                 }
                 R.id.bnInicio-> {
-                    startActivity(Intent(applicationContext, modoSupervisado::class.java))
+                    startActivity(Intent(applicationContext, MainActivity::class.java))
                     finish()
                     true
                 }

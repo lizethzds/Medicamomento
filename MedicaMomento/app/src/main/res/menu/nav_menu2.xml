@@ -6,9 +6,9 @@
    <item android:icon="@drawable/baseline_person_24" android:title="Perfiles" >
        <menu>
            <item android:id="@+id/nav_supervisor"
-               android:icon="@drawable/baseline_star_border_24"
                android:title="Supervisor"/>
            <item android:id="@+id/nav_supervisado"
+               android:icon="@drawable/baseline_star_border_24"
                android:title="Supervisado"/>
        </menu>
    </item>

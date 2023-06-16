@@ -19,6 +19,7 @@ import androidx.appcompat.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.ListView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -34,6 +35,7 @@ import com.google.android.material.navigation.NavigationView
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var recyclerView: RecyclerView
+    private lateinit var listView: ListView
     private lateinit var recyclerView2: RecyclerView
     private lateinit var adapter: Adaptador
     private lateinit var adaptador2: Adaptador2
@@ -169,6 +171,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         adapter = Adaptador(medicamentos)
         recyclerView.adapter = adapter
 
+        listView = findViewById(R.id.listv_registros)
+        listView.layout()
+
         recyclerView2 = findViewById(R.id.recyclerView2)
         recyclerView2.visibility = View.VISIBLE
         recyclerView2.layoutManager = LinearLayoutManager(this)
@@ -240,7 +245,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_supervisor ->
                 Toast.makeText(this, "Ya estás en modo supervisor", Toast.LENGTH_SHORT).show()
 
-            R.id.nav_registro -> Toast.makeText(this, "ver registros", Toast.LENGTH_SHORT).show()
+            R.id.nav_registro -> startActivity(Intent(applicationContext, Registros::class.java))
             R.id.nav_comentario -> startActivity(Intent(applicationContext, Comentarios::class.java))
         }
         drawerLayout.closeDrawer(GravityCompat.START)

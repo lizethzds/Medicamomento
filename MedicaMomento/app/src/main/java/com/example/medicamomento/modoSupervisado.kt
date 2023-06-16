@@ -30,7 +30,6 @@ class modoSupervisado : AppCompatActivity(), NavigationView.OnNavigationItemSele
 
 
 
-
     //Implementacion de autenticacion biometrica
 
     private var cancellationSignal: android.os.CancellationSignal? = null
@@ -133,12 +132,12 @@ class modoSupervisado : AppCompatActivity(), NavigationView.OnNavigationItemSele
             when (item.itemId) {
                 R.id.bnInicio -> true
                 R.id.bnMedicamentos -> {
-                    startActivity(Intent(applicationContext, Inicio::class.java))
+                    startActivity(Intent(applicationContext, InicioSupervisado::class.java))
                     finish()
                     true
                 }
                 R.id.bnPerfil -> {
-                    startActivity(Intent(applicationContext, AgregarPerfil::class.java))
+                    startActivity(Intent(applicationContext, VerPerfil::class.java))
                     finish()
                     true
                 }
@@ -182,7 +181,7 @@ class modoSupervisado : AppCompatActivity(), NavigationView.OnNavigationItemSele
             R.id.nav_supervisor ->
                 autenticarSupervisor()
 
-            R.id.nav_registro -> Toast.makeText(this, "ver registros", Toast.LENGTH_SHORT).show()
+            R.id.nav_registro -> startActivity(Intent(applicationContext, Registros::class.java))
             R.id.nav_comentario -> startActivity(Intent(applicationContext, Comentarios::class.java))
         }
         drawerLayout.closeDrawer(GravityCompat.START)
