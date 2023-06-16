@@ -236,7 +236,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_supervisado ->
-
                 startActivity(Intent(applicationContext,modoSupervisado::class.java))
             R.id.nav_supervisor ->
                 Toast.makeText(this, "Ya estás en modo supervisor", Toast.LENGTH_SHORT).show()

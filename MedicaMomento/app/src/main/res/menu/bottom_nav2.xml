@@ -5,7 +5,7 @@
         android:id="@+id/bnMedicamentos"
         android:icon="@drawable/baseline_home_24"/>
     <item android:title="Medicamentos"
-        android:id="@+id/bnInicio"
+        android:id="@+id/bnInicio2"
         android:icon="@drawable/baseline_medical_services_24"/>
     <item android:title="Perfil"
         android:id="@+id/bnPerfil"
