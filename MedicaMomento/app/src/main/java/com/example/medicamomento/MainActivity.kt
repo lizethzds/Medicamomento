@@ -171,9 +171,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         adapter = Adaptador(medicamentos)
         recyclerView.adapter = adapter
 
-        listView = findViewById(R.id.listv_registros)
-        listView.layout()
-
         recyclerView2 = findViewById(R.id.recyclerView2)
         recyclerView2.visibility = View.VISIBLE
         recyclerView2.layoutManager = LinearLayoutManager(this)
