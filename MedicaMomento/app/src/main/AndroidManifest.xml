@@ -23,6 +23,12 @@
         android:theme="@style/Theme.NavigationDrawer"
         tools:targetApi="31">
         <activity
+            android:name=".ComentariosSuperviasado"
+            android:exported="false" />
+        <activity
+            android:name=".ValidarToma"
+            android:exported="false" />
+        <activity
             android:name=".Registros"
             android:exported="false" />
         <activity

@@ -43,12 +43,7 @@
                     android:textSize="23sp"
                     android:alpha="0.8" /> <!-- Opacidad para el TextView -->
 
-                <ImageView
-                    android:id="@+id/btnDelete"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_delete"
-                    android:alpha="0.8" /> <!-- Opacidad para la ImageView -->
+                <!-- Opacidad para la ImageView -->
             </LinearLayout>
 
             <TextView

@@ -182,7 +182,7 @@ class modoSupervisado : AppCompatActivity(), NavigationView.OnNavigationItemSele
                 autenticarSupervisor()
 
             R.id.nav_registro -> startActivity(Intent(applicationContext, Registros::class.java))
-            R.id.nav_comentario -> startActivity(Intent(applicationContext, Comentarios::class.java))
+            R.id.nav_comentario -> startActivity(Intent(applicationContext, ComentariosSupervisado::class.java))
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
