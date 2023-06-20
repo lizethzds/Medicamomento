@@ -24,17 +24,10 @@
         android:theme="@style/Theme.NavigationDrawer"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
             android:name=".MandarNotifi"
             android:exported="false" />
         <activity
-            android:name=".ComentariosSuperviasado"
-=======
-            android:name=".ComentariosSup"
-            android:exported="false" />
-        <activity
             android:name=".ComentariosSupervisado"
->>>>>>> 27d4f6a887f24f39417b938dd0a5ab15530c3a21
             android:exported="false" />
         <activity
             android:name=".ValidarToma"

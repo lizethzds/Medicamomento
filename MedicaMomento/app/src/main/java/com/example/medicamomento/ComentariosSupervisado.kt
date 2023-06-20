@@ -18,14 +18,10 @@ private lateinit var binding: ActivityComentariosSuperviasadoBinding
         binding = ActivityComentariosSuperviasadoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-<<<<<<< HEAD
-        val txtcomentario:EditText = findViewById(R.id.txtCoemntario)
-=======
 
 
       //  setContentView(R.layout.activity_comentarios_superviasado)
         val txtcomentario:EditText = findViewById(R.id.txtCoemntarioS)
->>>>>>> 27d4f6a887f24f39417b938dd0a5ab15530c3a21
         val btncoment:Button = findViewById(R.id.btn_coments)
 
         val dbHelper = DBhelper(applicationContext)

@@ -3,18 +3,21 @@ package com.example.medicamomento
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.database.DataSetObserver
 import android.graphics.BitmapFactory
 import android.provider.BaseColumns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ListAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
-class Adaptador(private val medicamentos: List<DBhelper.Medicamento>) : RecyclerView.Adapter<Adaptador.ViewHolder>() {
+class Adaptador(private val medicamentos: List<DBhelper.Medicamento>) : RecyclerView.Adapter<Adaptador.ViewHolder>(),
+    ListAdapter {
 
     private var selectedPosition = RecyclerView.NO_POSITION
 
@@ -110,6 +113,42 @@ class Adaptador(private val medicamentos: List<DBhelper.Medicamento>) : Recycler
         }
 
 
+    }
+
+    override fun registerDataSetObserver(observer: DataSetObserver?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun unregisterDataSetObserver(observer: DataSetObserver?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getCount(): Int {
+        TODO("Not yet implemented")
+    }
+
+    override fun getItem(position: Int): Any {
+        TODO("Not yet implemented")
+    }
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        TODO("Not yet implemented")
+    }
+
+    override fun getViewTypeCount(): Int {
+        TODO("Not yet implemented")
+    }
+
+    override fun isEmpty(): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun areAllItemsEnabled(): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun isEnabled(position: Int): Boolean {
+        TODO("Not yet implemented")
     }
 
 }
