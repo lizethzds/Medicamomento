@@ -65,14 +65,7 @@
                 android:textSize="20sp"
                 android:alpha="0.8" /> <!-- Opacidad para el TextView -->
 
-            <Button
-                android:id="@+id/btnRetomar"
-                android:layout_width="138dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Retomar"
-                android:background="@drawable/boton_redondo"
-                android:alpha="0.8" /> <!-- Opacidad para el Button -->
+            <!-- Opacidad para el Button -->
 
         </LinearLayout>
 

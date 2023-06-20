@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 class Registros : AppCompatActivity() {
     private lateinit var listView: ListView
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: Adaptador
+    private lateinit var adapter: Adaptador2
     private lateinit var medicamentos: List<DBhelper.Medicamento>
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +25,7 @@ class Registros : AppCompatActivity() {
     //Configurar el RecyclerView y el adaptador
     recyclerView = findViewById(R.id.recyclerView)
     //recyclerView.layoutManager = LinearLayoutManager(this)
-    adapter = Adaptador(medicamentos)
+    adapter = Adaptador2(medicamentos)
     recyclerView.adapter = adapter
     }
 }
