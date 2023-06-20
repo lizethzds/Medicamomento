@@ -113,15 +113,7 @@ class modoSupervisado : AppCompatActivity(), NavigationView.OnNavigationItemSele
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_supervisado)
-/*
-        //boton agregar medicamentos
-        val btnMasmedic : FloatingActionButton = findViewById(R.id.btnMedicamento)
-        btnMasmedic.imageTintList = ColorStateList.valueOf(Color.WHITE)
-        btnMasmedic.setOnClickListener {
-            startActivity(Intent(applicationContext, AgregarMedicamento::class.java))
-        }
 
-  */
 
 
         //corregir para que se muestre unicamente las vistas de supervisado
@@ -182,7 +174,7 @@ class modoSupervisado : AppCompatActivity(), NavigationView.OnNavigationItemSele
                 autenticarSupervisor()
 
             R.id.nav_registro -> startActivity(Intent(applicationContext, Registros::class.java))
-            R.id.nav_comentario -> startActivity(Intent(applicationContext, ComentariosSupervisado::class.java))
+            R.id.nav_comentario -> startActivity(Intent(applicationContext, ComentariosSup::class.java))
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

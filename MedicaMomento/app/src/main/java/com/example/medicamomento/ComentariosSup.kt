@@ -6,23 +6,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.view.View
-import android.widget.*
-import com.example.medicamomento.databinding.ActivityComentariosBinding
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ListView
+import android.widget.Toast
+import com.example.medicamomento.databinding.ActivityComentariosSupBinding
 import com.example.medicamomento.databinding.ActivityComentariosSuperviasadoBinding
 
-class ComentariosSupervisado : AppCompatActivity() {
-private lateinit var binding: ActivityComentariosSuperviasadoBinding
+class ComentariosSup : AppCompatActivity() {
+    private lateinit var binding:ActivityComentariosSupBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityComentariosSuperviasadoBinding.inflate(layoutInflater)
+        binding = ActivityComentariosSupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
-
-      //  setContentView(R.layout.activity_comentarios_superviasado)
-        val txtcomentario:EditText = findViewById(R.id.txtCoemntarioS)
-        val btncoment:Button = findViewById(R.id.btn_coments)
+        val txtcomentario: EditText = findViewById(R.id.txtCoemntarioS)
+        val btncoment: Button = findViewById(R.id.btn_coments)
 
         val dbHelper = DBhelper(applicationContext)
         val db = dbHelper.writableDatabase
@@ -35,8 +37,8 @@ private lateinit var binding: ActivityComentariosSuperviasadoBinding
                     put(Constants.comentarios.COLUMN_COMENT, comment)
                 }
                 db.insert(Constants.comentarios.TABLE_NAME, null, values)
-                Toast.makeText(applicationContext,"Comentario guardado",Toast.LENGTH_SHORT).show()
-                startActivity(Intent(applicationContext, Comentarios::class.java))
+                Toast.makeText(applicationContext,"Comentario guardado", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(applicationContext, ComentariosSup::class.java))
                 overridePendingTransition(0, 0)
 
             }else{
@@ -80,4 +82,6 @@ private lateinit var binding: ActivityComentariosSuperviasadoBinding
         }
         startActivity(intent)
     }
-}
+    }
+
+
