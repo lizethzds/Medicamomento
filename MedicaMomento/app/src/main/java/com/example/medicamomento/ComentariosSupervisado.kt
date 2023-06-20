@@ -16,7 +16,7 @@ class ComentariosSupervisado : AppCompatActivity() {
         binding = ActivityComentariosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val txtcomentario:EditText = findViewById(R.id.txtCoemntarioS)
+        val txtcomentario:EditText = findViewById(R.id.txtCoemntario)
         val btncoment:Button = findViewById(R.id.btn_coments)
 
         val dbHelper = DBhelper(applicationContext)

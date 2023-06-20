@@ -1,7 +1,11 @@
 package com.example.medicamomento
 
 
+import android.app.AlarmManager
 import android.app.KeyguardManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
 import android.content.DialogInterface
 
@@ -31,6 +35,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
@@ -128,12 +133,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     //
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
 
         //boton agregar medicamentos
         val btnMasmedic : FloatingActionButton = findViewById(R.id.btnMedicamento)
@@ -234,7 +236,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
 
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_supervisado ->
@@ -244,6 +245,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.nav_registro -> startActivity(Intent(applicationContext, Registros::class.java))
             R.id.nav_comentario -> startActivity(Intent(applicationContext, Comentarios::class.java))
+            R.id.nav_noti -> startActivity(Intent(applicationContext, MandarNotifi::class.java))
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
