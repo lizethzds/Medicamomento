@@ -156,21 +156,21 @@ class AgregarMedicamento : AppCompatActivity() {
 
             startActivity(intent)
 
-            val btnagregar: Button = findViewById(R.id.agregar)
+            //val btnagregar: Button = findViewById(R.id.btnAlarma)
 
             //alarma///////////////////////////////
-            btnagregar.setOnClickListener{
+            //btnagregar.setOnClickListener{
 
                 val a = BigDecimal(et_Hora.text.toString().toInt())
                 val b = BigDecimal(1000)
                 val result = a.multiply(b)
                 var i = Intent(applicationContext, MyBroadcastReceiver::class.java)
-                var pi = PendingIntent.getBroadcast(applicationContext, 111, i, 0)
+                var pi = PendingIntent.getBroadcast(applicationContext, 0, i, 0)
                 var am : AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
                 am.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + result.toLong(), pi)
                 //val result = a.multiply(b)
                 Toast.makeText(applicationContext, "La alarma se establecio en $a", Toast.LENGTH_LONG).show()
-            }
+            //}
         }
     }
 

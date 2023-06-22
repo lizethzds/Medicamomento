@@ -174,13 +174,38 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         recyclerView.adapter = adapter
 
 
-
-
         val suspender: Button = findViewById(R.id.btnSuspender)
         val editar: Button = findViewById(R.id.btnEditar)
         editar.isEnabled = false
         suspender.isEnabled= false
 
+        /*suspender.setOnClickListener {
+            val selectedItemPosition = adapter.getSelectedPosition()
+            adapter.updateSelectedPosition(selectedItemPosition)
+
+            if (selectedItemPosition != RecyclerView.NO_POSITION) {
+                val medicamento = adapter.getMedicamentoAtPosition(selectedItemPosition)
+                medicamento?.let {
+                    recyclerView2 = findViewById(R.id.recyclerView2)
+                    recyclerView2.visibility = View.VISIBLE
+                    recyclerView2.layoutManager = LinearLayoutManager(this)
+                    adaptador2 = Adaptador2(medicamentos)
+                    recyclerView2.adapter = adaptador2
+                    //val intent = Intent(this, adaptador2::class.java)
+                    //setContentView(R.layout.medicinaitem2)
+                    // Realiza la suspensión del medicamento aquí, por ejemplo, actualiza un estado en la base de datos
+                    // o realiza cualquier otra acción necesaria para suspender el medicamento
+
+                    // Deshabilita los botones después de suspender el medicamento
+                    editar.isEnabled = false
+                    suspender.isEnabled = false
+
+                    Toast.makeText(this, "Medicamento suspendido", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Selecciona un medicamento", Toast.LENGTH_SHORT).show()
+            }
+        }*/
         suspender.setOnClickListener {
             val selectedItemPosition = adapter.getSelectedPosition()
             adapter.updateSelectedPosition(selectedItemPosition)
@@ -188,13 +213,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             if (selectedItemPosition != RecyclerView.NO_POSITION) {
                 val medicamento = adapter.getMedicamentoAtPosition(selectedItemPosition)
                 medicamento?.let {
-                    val intent = Intent(this, Adaptador2::class.java)
-                    // Realiza la suspensión del medicamento aquí, por ejemplo, actualiza un estado en la base de datos
-                    // o realiza cualquier otra acción necesaria para suspender el medicamento
+                    recyclerView2 = findViewById(R.id.recyclerView2)
+                    recyclerView2.visibility = View.VISIBLE
+                    recyclerView2.layoutManager = LinearLayoutManager(this)
+                    adaptador2 = Adaptador2(medicamentos)
+                    recyclerView2.adapter = adaptador2
 
-                    // Deshabilita los botones después de suspender el medicamento
-                    editar.isEnabled = false
-                    suspender.isEnabled = false
+                    // Resto del código...
+
 
                     Toast.makeText(this, "Medicamento suspendido", Toast.LENGTH_SHORT).show()
                 }

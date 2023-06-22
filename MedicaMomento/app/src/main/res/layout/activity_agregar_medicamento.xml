@@ -163,4 +163,14 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/cancelar" />
 
+    <ImageButton
+        android:id="@+id/btnAlarma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="584dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/reloj" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
