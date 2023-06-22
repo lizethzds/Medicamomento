@@ -1,7 +1,10 @@
 package com.example.medicamomento
 
 import android.app.Activity
+import android.app.AlarmManager
+import android.app.PendingIntent
 import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
@@ -10,13 +13,14 @@ import android.provider.BaseColumns
 import android.provider.MediaStore
 import android.view.View
 import android.widget.EditText
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import java.io.ByteArrayOutputStream
-
+import java.math.BigDecimal
 
 class AgregarMedicamento : AppCompatActivity() {
 
@@ -45,6 +49,8 @@ class AgregarMedicamento : AppCompatActivity() {
         btnCamara.setOnClickListener{
             startForResult.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))
         }
+
+
     }
 
     private fun showTimePickerDialog() {
@@ -149,6 +155,22 @@ class AgregarMedicamento : AppCompatActivity() {
             Toast.makeText(applicationContext, idc, Toast.LENGTH_SHORT).show()
 
             startActivity(intent)
+
+            val btnagregar: Button = findViewById(R.id.agregar)
+
+            //alarma///////////////////////////////
+            btnagregar.setOnClickListener{
+
+                val a = BigDecimal(et_Hora.text.toString().toInt())
+                val b = BigDecimal(1000)
+                val result = a.multiply(b)
+                var i = Intent(applicationContext, MyBroadcastReceiver::class.java)
+                var pi = PendingIntent.getBroadcast(applicationContext, 111, i, 0)
+                var am : AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+                am.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + result.toLong(), pi)
+                //val result = a.multiply(b)
+                Toast.makeText(applicationContext, "La alarma se establecio en $a", Toast.LENGTH_LONG).show()
+            }
         }
     }
 

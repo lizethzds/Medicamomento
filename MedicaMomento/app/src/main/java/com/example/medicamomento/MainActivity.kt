@@ -187,6 +187,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         editar.isEnabled = false
         suspender.isEnabled= false
 
+        suspender.setOnClickListener {
+            val selectedItemPosition = adapter.getSelectedPosition()
+            adapter.updateSelectedPosition(selectedItemPosition)
+
+            if (selectedItemPosition != RecyclerView.NO_POSITION) {
+                val medicamento = adapter.getMedicamentoAtPosition(selectedItemPosition)
+                medicamento?.let {
+                    val intent = Intent(this, Adaptador2::class.java)
+                    // Realiza la suspensión del medicamento aquí, por ejemplo, actualiza un estado en la base de datos
+                    // o realiza cualquier otra acción necesaria para suspender el medicamento
+
+                    // Deshabilita los botones después de suspender el medicamento
+                    editar.isEnabled = false
+                    suspender.isEnabled = false
+
+                    Toast.makeText(this, "Medicamento suspendido", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Selecciona un medicamento", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         editar.setOnClickListener {
             // Actualizar la posición seleccionada en el adaptador
@@ -232,9 +253,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
     }
-
-
-
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
